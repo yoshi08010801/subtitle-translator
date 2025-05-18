@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 QuickSub Draft — Extract & translate subtitles from any video (in your browser)
 
-## Getting Started
+A simple tool for indie creators, editors, and language learners.
 
-First, run the development server:
+👉 日本語の説明は下にあります / See below for Japanese 🇯🇵
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌟 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🎥 Drag & drop your video (MP4, WebM, etc.)
+- 🔲 Select subtitle region (optional)
+- 🧠 OCR powered by Tesseract.js (runs locally)
+- 🌍 Translate to 100+ languages via OpenAI GPT
+- 💾 Export .srt or .txt subtitle files
+- 🔒 100% local — your files stay on your device
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 How to Use
 
-To learn more about Next.js, take a look at the following resources:
+1. Upload your video  
+2. (Optional) Draw a box around subtitle area  
+3. Choose OCR language (e.g., English, Japanese)  
+4. Choose translation language  
+5. Click ▶ Extract OCR  
+6. Enter your OpenAI API key  
+7. Click ▶ Translate  
+8. Download subtitles as .srt or .txt  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧰 Requirements
 
-## Deploy on Vercel
+- Chrome, Safari, Edge, Firefox  
+- Internet connection (for translation)  
+- Your own [OpenAI API key](https://platform.openai.com/account/api-keys)  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Includes
+
+- Full source code (React + Next.js)  
+- `.env.template`, `README.md`  
+- MIT License — for personal & commercial use  
+
+---
+
+## ❗ Disclaimer
+
+Subtitle accuracy is not 100% guaranteed.  
+OCR and translation quality may vary depending on the video.  
+This tool is for **quick subtitle drafts** — always review and edit.
+
+---
+
+## 🛠 Built with ❤️ by Yoshi K in Japan  
+🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
+
+---
+
+<details>
+<summary>🇯🇵 日本語の説明はこちら</summary>
+
+<br>
+
+🎬 **QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳**
+
+クリエイター・編集者・語学学習者のためのシンプルなツールです。
+
+---
+
+### 🌟 特徴
+
+- 🎥 動画をドラッグ＆ドロップ（MP4, WebM対応）  
+- 🔲 字幕エリアを手動で選択（任意）  
+- 🧠 Tesseract.jsでローカルOCR処理  
+- 🌍 GPTで100言語以上に翻訳  
+- 💾 SRT / TXTファイルで字幕書き出し  
+- 🔒 完全ローカル処理（ファイルは端末内のみ）  
+
+---
+
+### 🚀 使い方
+
+1. 動画をアップロード  
+2. （任意）字幕エリアを囲む  
+3. OCR言語を選択（例：日本語、英語）  
+4. 翻訳言語を選ぶ  
+5. ▶ 抽出ボタンでOCR開始  
+6. OpenAI APIキーを入力  
+7. ▶ 翻訳ボタンで翻訳開始  
+8. 字幕ファイル（.srt または .txt）を保存  
+
+---
+
+### 🧰 必要なもの
+
+- Chrome, Safari, Edge, Firefox  
+- インターネット接続（翻訳時）  
+- [OpenAI APIキー](https://platform.openai.com/account/api-keys)  
+
+---
+
+### 📦 同梱内容
+
+- フルソースコード（React + Next.js）  
+- `.env.template`, `README.md`  
+- MITライセンス（個人・商用利用OK）  
+
+---
+
+### ❗ 免責事項
+
+抽出や翻訳の精度は100%ではありません。  
+本ツールは **素早くドラフト字幕を作るための支援ツール** です。  
+最終的な字幕は必ず確認・編集をお願いします。
+
+---
+
+### 🛠 開発者
+
+日本在住のYoshi Kが開発しました。  
+🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
+
+</details>
