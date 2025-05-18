@@ -62,7 +62,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 ---
 
-## 🛠 Built with ❤️ by Yoshi K in Japan  
+## 🛠 Built with  by Yoshi K in Japan  
 🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
 
 ---
