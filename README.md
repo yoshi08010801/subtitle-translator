@@ -13,6 +13,7 @@ A simple tool for indie creators, editors, and language learners.
 A quick demo of how QuickSub Draft works.  
 （日本語字幕付き：使い方の流れもわかります）
 
+---
 
 ## 🌟 Features
 
@@ -62,7 +63,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 ---
 
-## 🛠 Built with  by Yoshi K in Japan  
+## 🛠 Built with ❤️ by Yoshi K in Japan  
 🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
 
 ---
@@ -132,3 +133,15 @@ This tool is for **quick subtitle drafts** — always review and edit.
 🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
 
 </details>
+
+---
+
+## ⚖️ License Notes
+
+This app uses OCR models from the [Tesseract project](https://github.com/tesseract-ocr/tessdata), licensed under the Apache License 2.0.
+
+---
+
+## ⚖️ ライセンスに関する注記
+
+本アプリでは、[Tesseract プロジェクト](https://github.com/tesseract-ocr/tessdata) のOCRモデルを利用しています（Apache License 2.0 に準拠）。
