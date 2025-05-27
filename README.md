@@ -1,12 +1,7 @@
 # 🎬 QuickSub Draft — Extract & translate subtitles from any video (in your browser)
 
-## ✅ ② Motivation（🧠 開発理由） 
-
-```diff
-A simple tool for indie creators, editors, and language learners.
-+ I built this tool to solve my own YouTube workflow problem: translating hardcoded subtitles was extremely time-consuming.
-
-A simple tool for indie creators, editors, and language learners.
+A simple tool for indie creators, editors, and language learners.  
+I built this tool to solve my own YouTube workflow problem: translating hardcoded subtitles was extremely time-consuming.
 
 👉 日本語の説明は下にあります / See below for Japanese 🇯🇵
 
@@ -60,7 +55,6 @@ A quick demo of how QuickSub Draft works.
 - MIT License — for personal & commercial use  
 
 ---
----
 
 ## 🔄 Internal Flow
 
@@ -76,7 +70,9 @@ A quick demo of how QuickSub Draft works.
 🌐 OpenAI GPT-4o で翻訳（多言語対応）
    ↓
 📁 .srt / .txt 形式で字幕ファイルを書き出し
+```
 
+---
 
 ## ❗ Disclaimer
 
@@ -129,7 +125,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 ---
 
-### 🧰 必要なもの
+### 🔧 必要なもの
 
 - Chrome, Safari, Edge, Firefox  
 - インターネット接続（翻訳時）  
@@ -158,18 +154,30 @@ This tool is for **quick subtitle drafts** — always review and edit.
 日本在住のYoshi Kが開発しました。  
 🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
 
+---
+
+### 💻 技術メモ（Developer Notes）
+
+- フロントは Next.js + Tailwind CSS（もしくは shadcn/ui）で構築  
+- canvas を使って動画の一部をフレーム画像として抽出  
+- Tesseract.js で OCR をローカル処理（APIレスポンスなしで高速）  
+- GPT-4o を使った多言語翻訳。APIキーはユーザー入力式  
+- 翻訳された字幕データは SRT/TXT形式で整形して保存可能  
+- 字幕書き出しは `00:00:00,000` 形式のタイムスタンプ付きで自動出力  
+
 </details>
 
 ---
 
 ## 🧑‍💻 Developer Notes
 
-- フロントは Next.js + Tailwind CSS（もしくは shadcn/ui）で構築
-- canvas を使って動画の一部をフレーム画像として抽出
-- Tesseract.js で OCR をローカル処理（APIレスポンスなしで高速）
-- GPT-4o を使った多言語翻訳。APIキーはユーザー入力式
-- 翻訳された字幕データは SRT/TXT形式で整形して保存可能
-- 字幕書き出しは `00:00:00,000` 形式のタイムスタンプ付きで自動出力
+- Frontend: Next.js + Tailwind CSS (or shadcn/ui)  
+- OCR: `canvas` to extract frames, processed by Tesseract.js (runs locally)  
+- Translation: OpenAI GPT-4o with user-supplied API key  
+- Subtitle format: SRT or TXT, with automatic timestamp formatting  
+- Optimized for quick, local execution — all OCR processing runs in the browser
+
+---
 
 ## ⚖️ License Notes
 
