@@ -87,14 +87,14 @@ This tool is for **quick subtitle drafts** — always review and edit.
 ---
 
 <details>
-<summary>🔽 日本語をご希望の方はこちら（クリックで展開）</summary>
-
-> このツールは、自分自身がYouTubeで字幕を翻訳する際に  
-> 「映像に焼き込まれた字幕を抽出して翻訳するのが面倒」という悩みから開発しました。
+<summary>🔽 日本語はこちら（クリックで展開）</summary>
 
 <br>
 
 ## 🎬 QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳
+
+このツールは、自分自身がYouTubeで字幕を翻訳する際に  
+「映像に焼き込まれた字幕を抽出して翻訳するのが面倒」という悩みから開発しました。
 
 クリエイター・編集者・語学学習者のためのシンプルなツールです。
 
@@ -126,7 +126,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 ### 💻 技術メモ（Developer Notes）
 
-- フロントは Next.js + Tailwind CSS（もしくは shadcn/ui）で構築  
+- フロントは Next.js + Tailwind CSS（または shadcn/ui）で構築  
 - canvas を使って動画の一部をフレーム画像として抽出  
 - Tesseract.js で OCR をローカル処理（APIレスポンスなしで高速）  
 - GPT-4o を使った多言語翻訳。APIキーはユーザー入力式  
