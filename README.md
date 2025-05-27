@@ -3,7 +3,7 @@
 A simple tool for indie creators, editors, and language learners.  
 I built this tool to solve my own YouTube workflow problem: translating hardcoded subtitles was extremely time-consuming.
 
-👉 日本語の説明は下にあります / See below for Japanese 🇯🇵
+👉 日本語をご希望の方は、下の「🔽 日本語はこちら」セクションをクリックしてください。
 
 ---
 
@@ -87,7 +87,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 ---
 
 <details>
-<summary>🇯🇵 日本語の説明はこちら</summary>
+<summary>🔽 日本語をご希望の方はこちら（クリックで展開）</summary>
 
 > このツールは、自分自身がYouTubeで字幕を翻訳する際に  
 > 「映像に焼き込まれた字幕を抽出して翻訳するのが面倒」という悩みから開発しました。
