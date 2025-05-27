@@ -11,7 +11,7 @@ I built this tool to solve my own YouTube workflow problem: translating hardcode
 
 [![Watch the demo](https://img.youtube.com/vi/0aX989tWoYQ/hqdefault.jpg)](https://youtu.be/0aX989tWoYQ)  
 A quick demo of how QuickSub Draft works.  
-（使い方の流れもわかります）
+(With Japanese subtitles, showing full process)
 
 ---
 
@@ -58,6 +58,23 @@ A quick demo of how QuickSub Draft works.
 ## 🔄 Internal Flow
 
 ```plaintext
+🎥 Upload video (MP4/WebM)
+   ↓
+📐 Extract frame with canvas
+   ↓
+🔎 Run OCR with Tesseract.js (locally)
+   ↓
+🧹 Clean text (remove line breaks, regex)
+   ↓
+🌐 Translate via OpenAI GPT-4o (multi-language)
+   ↓
+📁 Export as .srt / .txt subtitle file
+```
+
+<details>
+<summary>🔽 日本語での処理フローを表示（クリックで展開）</summary>
+
+```plaintext
 🎥 動画アップロード（MP4/WebM）
    ↓
 📐 canvasで1フレーム画像を取得
@@ -70,6 +87,8 @@ A quick demo of how QuickSub Draft works.
    ↓
 📁 .srt / .txt 形式で字幕ファイルを書き出し
 ```
+
+</details>
 
 ---
 
@@ -88,8 +107,6 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 <details>
 <summary>🔽 日本語はこちら（クリックで展開）</summary>
-
-<br>
 
 ## 🎬 QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳
 
