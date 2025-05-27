@@ -11,7 +11,7 @@ I built this tool to solve my own YouTube workflow problem: translating hardcode
 
 [![Watch the demo](https://img.youtube.com/vi/0aX989tWoYQ/hqdefault.jpg)](https://youtu.be/0aX989tWoYQ)  
 A quick demo of how QuickSub Draft works.  
-（日本語字幕付き：使い方の流れもわかります）
+（使い方の流れもわかります）
 
 ---
 
