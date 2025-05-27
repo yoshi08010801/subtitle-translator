@@ -9,8 +9,7 @@ I built this tool to solve my own YouTube workflow problem: translating hardcode
 
 ## 🎥 Demo
 
-[![Watch the demo](https://img.youtube.com/vi/0aX989tWoYQ/hqdefault.jpg)](https://youtu.be/0aX989tWoYQ)
-
+[![Watch the demo](https://img.youtube.com/vi/0aX989tWoYQ/hqdefault.jpg)](https://youtu.be/0aX989tWoYQ)  
 A quick demo of how QuickSub Draft works.  
 （日本語字幕付き：使い方の流れもわかります）
 
@@ -95,7 +94,7 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 <br>
 
-🎬 **QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳**
+## 🎬 QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳
 
 クリエイター・編集者・語学学習者のためのシンプルなツールです。
 
@@ -122,37 +121,6 @@ This tool is for **quick subtitle drafts** — always review and edit.
 6. OpenAI APIキーを入力  
 7. ▶ 翻訳ボタンで翻訳開始  
 8. 字幕ファイル（.srt または .txt）を保存  
-
----
-
-### 🔧 必要なもの
-
-- Chrome, Safari, Edge, Firefox  
-- インターネット接続（翻訳時）  
-- [OpenAI APIキー](https://platform.openai.com/account/api-keys)  
-
----
-
-### 📦 同梱内容
-
-- フルソースコード（React + Next.js）  
-- `.env.template`, `README.md`  
-- MITライセンス（個人・商用利用OK）  
-
----
-
-### ❗ 免責事項
-
-抽出や翻訳の精度は100%ではありません。  
-本ツールは **素早くドラフト字幕を作るための支援ツール** です。  
-最終的な字幕は必ず確認・編集をお願いします。
-
----
-
-### 🛠 開発者
-
-日本在住のYoshi Kが開発しました。  
-🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
 
 ---
 
