@@ -1,5 +1,11 @@
 # 🎬 QuickSub Draft — Extract & translate subtitles from any video (in your browser)
 
+## ✅ ② Motivation（🧠 開発理由） 
+
+```diff
+A simple tool for indie creators, editors, and language learners.
++ I built this tool to solve my own YouTube workflow problem: translating hardcoded subtitles was extremely time-consuming.
+
 A simple tool for indie creators, editors, and language learners.
 
 👉 日本語の説明は下にあります / See below for Japanese 🇯🇵
@@ -54,6 +60,23 @@ A quick demo of how QuickSub Draft works.
 - MIT License — for personal & commercial use  
 
 ---
+---
+
+## 🔄 Internal Flow
+
+```plaintext
+🎥 動画アップロード（MP4/WebM）
+   ↓
+📐 canvasで1フレーム画像を取得
+   ↓
+🔎 Tesseract.jsでOCR処理（ローカル動作）
+   ↓
+🧹 テキストを整形（改行除去・正規表現）
+   ↓
+🌐 OpenAI GPT-4o で翻訳（多言語対応）
+   ↓
+📁 .srt / .txt 形式で字幕ファイルを書き出し
+
 
 ## ❗ Disclaimer
 
@@ -70,6 +93,9 @@ This tool is for **quick subtitle drafts** — always review and edit.
 
 <details>
 <summary>🇯🇵 日本語の説明はこちら</summary>
+
+> このツールは、自分自身がYouTubeで字幕を翻訳する際に  
+> 「映像に焼き込まれた字幕を抽出して翻訳するのが面倒」という悩みから開発しました。
 
 <br>
 
@@ -135,6 +161,15 @@ This tool is for **quick subtitle drafts** — always review and edit.
 </details>
 
 ---
+
+## 🧑‍💻 Developer Notes
+
+- フロントは Next.js + Tailwind CSS（もしくは shadcn/ui）で構築
+- canvas を使って動画の一部をフレーム画像として抽出
+- Tesseract.js で OCR をローカル処理（APIレスポンスなしで高速）
+- GPT-4o を使った多言語翻訳。APIキーはユーザー入力式
+- 翻訳された字幕データは SRT/TXT形式で整形して保存可能
+- 字幕書き出しは `00:00:00,000` 形式のタイムスタンプ付きで自動出力
 
 ## ⚖️ License Notes
 
