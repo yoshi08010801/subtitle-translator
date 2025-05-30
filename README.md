@@ -1,175 +1,130 @@
-# 🎬 QuickSub Draft — Extract & translate subtitles from any video (in your browser)
+# 🥤 Virtual Vending Machine — Choose Your Vending Experience in the Browser
 
-A simple tool for indie creators, editors, and language learners.  
-I built this tool to solve my own YouTube workflow problem: translating hardcoded subtitles was extremely time-consuming.
+A fun and interactive web-based vending machine!  
+Click a button to choose a real vending machine video to watch — just like visiting one in Japan, but from your screen.
 
-👉 日本語をご希望の方は、下の「🔽 日本語はこちら」セクションをクリックしてください。
-
----
-
-## 🎥 Demo
-
-[![Watch the demo](https://img.youtube.com/vi/0aX989tWoYQ/hqdefault.jpg)](https://youtu.be/0aX989tWoYQ)  
-A quick demo of how QuickSub Draft works.  
-(With Japanese subtitles, showing full process)
+👉 日本語をご希望の方は、下の「🔽 日本語はこちら」セクションをご覧ください。
 
 ---
 
 ## 🌟 Features
 
-- 🎥 Drag & drop your video (MP4, WebM, etc.)
-- 🔲 Select subtitle region (optional)
-- 🧠 OCR powered by Tesseract.js (runs locally)
-- 🌍 Translate to 100+ languages via OpenAI GPT
-- 💾 Export .srt or .txt subtitle files
-- 🔒 100% local — your files stay on your device
+- 🎰 Click-to-choose vending experience  
+- 📺 Select from a variety of real vending machine videos (YouTube)  
+- 🔊 Button & vending sounds (with popup warning before first use)  
+- 🧭 Fully user-controlled — no randomness  
+- 📱 Fully responsive – works great on mobile  
 
 ---
 
 ## 🚀 How to Use
 
-1. Upload your video  
-2. (Optional) Draw a box around subtitle area  
-3. Choose OCR language (e.g., English, Japanese)  
-4. Choose translation language  
-5. Click ▶ Extract OCR  
-6. Enter your OpenAI API key  
-7. Click ▶ Translate  
-8. Download subtitles as .srt or .txt  
+1. Open the app in your browser  
+2. Browse the available vending machines  
+3. Click a button to play vending sounds  
+4. Automatically redirected to the YouTube video you selected  
 
 ---
 
-## 🧰 Requirements
+## 📦 Installation (for local development)
 
-- Chrome, Safari, Edge, Firefox  
-- Internet connection (for translation)  
-- Your own [OpenAI API key](https://platform.openai.com/account/api-keys)  
-
----
-
-## 📦 Includes
-
-- Full source code (React + Next.js)  
-- `.env.template`, `README.md`  
-- MIT License — for personal & commercial use  
+```bash
+git clone https://github.com/yourname/virtual-vending-machine.git
+cd virtual-vending-machine
+npm install
+npm run dev
+```
 
 ---
 
-## 🔄 Internal Flow
+## 🧰 Tech Stack
+
+- Framework: React + Next.js  
+- Styling: CSS / Tailwind  
+- Hosting: GitHub Pages or Vercel  
+- Sound: HTMLAudioElement  
+- Backend: None (fully frontend)  
+
+---
+
+## 📁 Internal Flow
 
 ```plaintext
-🎥 Upload video (MP4/WebM)
+🧭 User clicks a specific vending machine
    ↓
-📐 Extract frame with canvas
+🔊 Play sound effects
    ↓
-🔎 Run OCR with Tesseract.js (locally)
-   ↓
-🧹 Clean text (remove line breaks, regex)
-   ↓
-🌐 Translate via OpenAI GPT-4o (multi-language)
-   ↓
-📁 Export as .srt / .txt subtitle file
+🔗 Redirect to selected YouTube vending machine video
 ```
 
 <details>
 <summary>🔽 日本語での処理フローを表示（クリックで展開）</summary>
 
 ```plaintext
-🎥 動画アップロード（MP4/WebM）
+🧭 ユーザーが好きな自販機を選んでクリック
    ↓
-📐 canvasで1フレーム画像を取得
+🔊 音が鳴る（ボタン音＋自販機音）
    ↓
-🔎 Tesseract.jsでOCR処理（ローカル動作）
-   ↓
-🧹 テキストを整形（改行除去・正規表現）
-   ↓
-🌐 OpenAI GPT-4o で翻訳（多言語対応）
-   ↓
-📁 .srt / .txt 形式で字幕ファイルを書き出し
+🔗 選択したYouTubeの自販機動画にジャンプ
 ```
 
 </details>
 
 ---
 
-## ❗ Disclaimer
+## ❗ Notes
 
-Subtitle accuracy is not 100% guaranteed.  
-OCR and translation quality may vary depending on the video.  
-This tool is for **quick subtitle drafts** — always review and edit.
+This app is an interactive launcher for real vending machine videos.  
+Unlike gacha, **you choose exactly which experience you want to try.**  
+No drinks or products appear — only immersive sound and redirection.
 
 ---
 
 ## 🛠 Built with ❤️ by Yoshi K in Japan  
-🔗 [yoshiverse1.gumroad.com](https://yoshiverse1.gumroad.com)
+https://yoshiverse1.gumroad.com
 
 ---
 
 <details>
 <summary>🔽 日本語はこちら（クリックで展開）</summary>
 
-## 🎬 QuickSub Draft — 動画の字幕をブラウザで抽出＆翻訳
+## 🥤 Virtual Vending Machine — 自分で選べる自販機動画体験アプリ
 
-このツールは、自分自身がYouTubeで字幕を翻訳する際に  
-「映像に焼き込まれた字幕を抽出して翻訳するのが面倒」という悩みから開発しました。
-
-クリエイター・編集者・語学学習者のためのシンプルなツールです。
+このアプリは「ランダム」ではありません。  
+**あなた自身が見たい自販機を選び、ボタンを押すと、その動画（YouTube）に移動できるWebアプリ**です。  
+まるで現地で自販機に立っているような気分が味わえます。
 
 ---
 
 ### 🌟 特徴
 
-- 🎥 動画をドラッグ＆ドロップ（MP4, WebM対応）  
-- 🔲 字幕エリアを手動で選択（任意）  
-- 🧠 Tesseract.jsでローカルOCR処理  
-- 🌍 GPTで100言語以上に翻訳  
-- 💾 SRT / TXTファイルで字幕書き出し  
-- 🔒 完全ローカル処理（ファイルは端末内のみ）  
+- 🎰 好きな自販機を選んで体験できる  
+- 📺 各ボタンにYouTubeの自販機動画が紐付いている  
+- 🔊 ボタン音・自販機音が再生され、臨場感を演出（初回は音に関するポップアップあり）  
+- 🚫 飲み物や商品は画面に表示されません  
+- 📱 モバイルにも対応したシンプルなUI構成  
 
 ---
 
 ### 🚀 使い方
 
-1. 動画をアップロード  
-2. （任意）字幕エリアを囲む  
-3. OCR言語を選択（例：日本語、英語）  
-4. 翻訳言語を選ぶ  
-5. ▶ 抽出ボタンでOCR開始  
-6. OpenAI APIキーを入力  
-7. ▶ 翻訳ボタンで翻訳開始  
-8. 字幕ファイル（.srt または .txt）を保存  
+1. アプリをブラウザで開く  
+2. 見たい自販機を選ぶ  
+3. ボタンをクリックして音と雰囲気を楽しむ  
+4. 選んだ自販機のYouTube動画にジャンプ  
 
 ---
 
-### 💻 技術メモ（Developer Notes）
+### 💻 技術メモ
 
-- フロントは Next.js + Tailwind CSS（または shadcn/ui）で構築  
-- canvas を使って動画の一部をフレーム画像として抽出  
-- Tesseract.js で OCR をローカル処理（APIレスポンスなしで高速）  
-- GPT-4o を使った多言語翻訳。APIキーはユーザー入力式  
-- 翻訳された字幕データは SRT/TXT形式で整形して保存可能  
-- 字幕書き出しは `00:00:00,000` 形式のタイムスタンプ付きで自動出力  
+- フロントエンド：React + Next.js  
+- サウンド：HTML5 Audio使用（mp3形式）  
+- デプロイ先：VercelまたはGitHub Pages  
+- 自販機はリスト形式で選択可能、ランダム要素なし  
+- バックエンド不要（完全クライアントサイド）  
 
 </details>
 
 ---
 
-## 🧑‍💻 Developer Notes
 
-- Frontend: Next.js + Tailwind CSS (or shadcn/ui)  
-- OCR: `canvas` to extract frames, processed by Tesseract.js (runs locally)  
-- Translation: OpenAI GPT-4o with user-supplied API key  
-- Subtitle format: SRT or TXT, with automatic timestamp formatting  
-- Optimized for quick, local execution — all OCR processing runs in the browser
-
----
-
-## ⚖️ License Notes
-
-This app uses OCR models from the [Tesseract project](https://github.com/tesseract-ocr/tessdata), licensed under the Apache License 2.0.
-
----
-
-## ⚖️ ライセンスに関する注記
-
-本アプリでは、[Tesseract プロジェクト](https://github.com/tesseract-ocr/tessdata) のOCRモデルを利用しています（Apache License 2.0 に準拠）。
