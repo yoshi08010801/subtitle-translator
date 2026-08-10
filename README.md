@@ -12,7 +12,7 @@ Perfect for indie creators, editors, and language learners.
 - OCR powered by Tesseract.js (runs locally in your browser)
 - Translate subtitles into up to 10 preset languages via OpenAI GPT
 - Export `.srt` or `.txt` subtitle files
-- 100% local — video never leaves your browser
+- Video processing runs locally in your browser — the video file itself is not uploaded
 
 ---
 
@@ -136,7 +136,8 @@ OCR models (`jpn.traineddata`, `eng.traineddata`, etc.) were downloaded from the
 - ブラウザ内で動作する Tesseract.js による OCR（ローカル実行）
 - OpenAI GPT を使って、最大 10 言語まで翻訳
 - `.srt` または `.txt` 形式で字幕を書き出し
-- 動画ファイルはブラウザ外に送信されないローカル処理
+- 動画ファイル自体は外部サーバーへアップロードせず、ブラウザ内で処理
+- 翻訳時は抽出した字幕テキストを OpenAI API へ送信
 
 ---
 
@@ -157,8 +158,8 @@ OCR models (`jpn.traineddata`, `eng.traineddata`, etc.) were downloaded from the
 
 - モダンブラウザ（Chrome, Edge, Firefox, Safari）
 - インターネット接続（翻訳 API 用）
-- ユーザー自身の OpenAI API キー  
-  （取得先: https://platform.openai.com/account/api-keys）
+- ユーザー自身の OpenAI API キー
+  （取得先: https://platform.openai.com/api-keys）
 
 ---
 
@@ -209,6 +210,27 @@ OCR models (`jpn.traineddata`, `eng.traineddata`, etc.) were downloaded from the
 - Next.js（App Router）
 - Tesseract.js（OCR エンジン）
 - OpenAI GPT API（翻訳）
+
+---
+
+## 開発背景
+
+動画編集をする中で、映像に焼き込まれた字幕を手作業で書き起こし、
+さらに多言語へ翻訳する作業に手間がかかると感じたことが開発のきっかけです。
+
+そこで、OCRによる字幕抽出、AIによる翻訳、字幕ファイルの生成までを
+ブラウザ上で一連の流れとして行えるツールを開発しました。
+
+---
+
+## 技術的に工夫した点
+
+- Tesseract.jsを利用し、ブラウザ上でOCR処理を実行
+- 動画上の字幕領域を指定できるようにし、不要な部分のOCR処理を減らせる構成
+- OpenAI GPT APIを利用して字幕を翻訳
+- 抽出・翻訳した字幕を `.srt` / `.txt` 形式で出力
+- 動画ファイル自体は外部サーバーへ送信せず、ブラウザ内で処理
+- Next.js / React / TypeScriptを利用してWebアプリとして実装
 
 ---
 
