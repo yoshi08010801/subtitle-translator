@@ -1,5 +1,22 @@
+# dependencies
 node_modules/
-SubtitleApp.zip
-node_modules/
-SubtitleApp.zip
+
+# Next.js
+.next/
+out/
+
+# environment
+.env
+.env.local
+.env.*.local
+!.env.template
+
+# macOS
 .DS_Store
+
+# logs
+*.log
+
+# build / archive
+dist/
+SubtitleApp.zip
