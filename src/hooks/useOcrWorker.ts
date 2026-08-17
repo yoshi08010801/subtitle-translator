@@ -20,8 +20,8 @@ export function useOcrWorker(
       await worker.loadLanguage(lang);
       await worker.initialize(lang);
       await worker.setParameters({
-        tessedit_pageseg_mode: Tesseract.PSM.SINGLE_LINE,
-        tessedit_ocr_engine_mode: Tesseract.OEM.LSTM_ONLY,
+        tessedit_pageseg_mode: "7" as Tesseract.PSM,
+        tessedit_ocr_engine_mode: 1 as Tesseract.OEM,
         tessedit_char_whitelist:
           "あ-んア-ン一-龥A-Za-z0-9。、！？ー",
       });

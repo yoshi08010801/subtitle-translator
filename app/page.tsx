@@ -9,6 +9,7 @@ import React, {
   DragEvent,
 } from "react";
 import { useOcrWorker } from "@/hooks/useOcrWorker";
+import type * as Tesseract from "tesseract.js";
 
 
 interface Subtitle {
@@ -249,7 +250,7 @@ export default function Page() {
       await worker.setParameters({
         tessedit_char_whitelist:
           "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789:.,",
-        tessedit_pageseg_mode: "6",
+        tessedit_pageseg_mode: "6" as Tesseract.PSM,
       });
       const {
         data: { text },
