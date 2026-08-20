@@ -9,60 +9,21 @@ import React, {
   DragEvent,
 } from "react";
 import { useOcrWorker } from "@/hooks/useOcrWorker";
+import SubtitlePreview from "./components/SubtitlePreview";
+import {
+  OCR_LANGUAGES,
+  TRANSLATE_LANGUAGES,
+  formatTime,
+  makeSRT,
+  makeTranslatedSRT,
+  type Subtitle,
+} from "@/lib/subtitle";
 import type * as Tesseract from "tesseract.js";
 
 
-interface Subtitle {
-  index: number;
-  start: string;
-  end: string;
-  text: string;
-  translated?: string;
-}
 type Region = { x: number; y: number; width: number; height: number };
 
-const OCR_LANGUAGES = [
-  { code: "eng", name: "English" },
-  { code: "jpn", name: "Japanese" },
-  { code: "spa", name: "Spanish" },
-  { code: "fra", name: "French" },
-  { code: "chi_sim", name: "Chinese (Simplified)" },
-];
-const TRANSLATE_LANGUAGES = [
-  { code: "en", name: "English" },
-  { code: "ja", name: "日本語" },
-  { code: "es", name: "Español" },
-  { code: "fr", name: "Français" },
-  { code: "de", name: "Deutsch" },
-  { code: "zh", name: "中文" },
-  { code: "ko", name: "한국어" },
-  { code: "it", name: "Italiano" },
-  { code: "pt", name: "Português" },
-  { code: "ru", name: "Русский" },
-];
-
-
 const REGION_MARGIN = 5;
-
-function formatTime(sec: number) {
-  const h = String(Math.floor(sec / 3600)).padStart(2, "0");
-  const m = String(Math.floor((sec % 3600) / 60)).padStart(2, "0");
-  const s = String(Math.floor(sec % 60)).padStart(2, "0");
-  const ms = String(Math.floor((sec % 1) * 1000)).padStart(3, "0");
-  return `${h}:${m}:${s},${ms}`;
-}
-
-function makeSRT(subs: Subtitle[]) {
-  return subs
-    .map((s) => `${s.index}\n${s.start} --> ${s.end}\n${s.text}`)
-    .join("\n\n");
-}
-
-function makeTranslatedSRT(subs: Subtitle[]) {
-  return subs
-    .map((s) => `${s.index}\n${s.start} --> ${s.end}\n${s.translated || ""}`)
-    .join("\n\n");
-}
 
 export default function Page() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -541,76 +502,17 @@ export default function Page() {
           </button>
         </div>
 
-        <div
-          style={{
-            background: "#f5f5f5",
-            padding: 12,
-            borderRadius: 6,
-            maxHeight: "50vh",
-            overflowY: "auto",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: 8,
-            }}
-          >
-            <div style={{ display: "flex", gap: 8 }}>
-              <h3 style={{ margin: 0 }}>Preview</h3>
-              <button
-                onClick={() => setPreviewMode("original")}
-                disabled={previewMode === "original"}
-              >
-                ⑧ Original
-              </button>
-              <button
-                onClick={() => setPreviewMode("translated")}
-                disabled={
-                  previewMode === "translated" ||
-                  !subtitles.some((s) => s.translated)
-                }
-              >
-                ⑧ Translated
-              </button>
-            </div>
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              <button onClick={() => download(false)}>
-                ⑨ Download Original
-              </button>
-              <label style={ctrlBox}>
-                ⑩ API Key
-                <input
-                  type="password"
-                  placeholder="OpenAI API Key"
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  style={{ marginLeft: 6, width: 200 }}
-                />
-              </label>
-              <button onClick={translateAll} disabled={isTranslating}>
-                {isTranslating ? "Translating…" : "⑪ ▶ Translate"}
-              </button>
-              <button onClick={() => download(true)}>
-                ⑫ Download Translated
-              </button>
-            </div>
-          </div>
-
-          {subtitles.length > 0 ? (
-            <pre style={{ whiteSpace: "pre-wrap" }}>
-              {previewMode === "original"
-                ? makeSRT(subtitles)
-                : makeTranslatedSRT(subtitles)}
-            </pre>
-          ) : (
-            <p style={{ textAlign: "center", color: "#888" }}>
-              No OCR results yet
-            </p>
-          )}
-        </div>
+        <SubtitlePreview
+          subtitles={subtitles}
+          previewMode={previewMode}
+          setPreviewMode={setPreviewMode}
+          apiKey={apiKey}
+          setApiKey={setApiKey}
+          isTranslating={isTranslating}
+          translateAll={translateAll}
+          download={download}
+          ctrlBox={ctrlBox}
+        />
       </div>
     </div>
   );
